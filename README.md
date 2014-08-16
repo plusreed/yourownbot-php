@@ -8,7 +8,7 @@ Instructions below on how to use.
 How to use
 =================
 Pretty much the instructions are straight-forward.
-All you have to do is make a @yourownbot account, then create an application (using http://apps.twitter.com) and setting the permissions to Read and Write. Then, retrieve your keys, and put them in.
+All you have to do is make a @yourownbot (example: @yourownroblox) account, then create an application (using http://apps.twitter.com) and setting the permissions to Read and Write. Then, retrieve your keys, and put them in.
 
 How to use the arrays (word1 and word2)
 =================
