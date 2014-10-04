@@ -16,7 +16,7 @@ $apikey = "apikeyhere";
 $apikeysecret = "apikeysecrethere";
 
 // Create a new object
-$tweet = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
+$tweet = new TwitterOAuth($consumerkey, $consumersecret, $apikey, $apikeysecret); // Whoops! Had a mistake here. Fixed.
 
 // Randomized tweet
 $tweetMessage = $rand_word1.' your own '.$rand_word2.'!';
