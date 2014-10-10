@@ -1,7 +1,8 @@
 <?php
 // SendYourOwnTweet.php
-// Made by PlusReed because I love @yourownbot and I was bored. :D
-// Please, keep my name in this. I have no license to this, but, please, no theft. :-(
+// A basic PHP-powered @yourownbot clone.
+// By PlusReed, minor improvements by +Sean.
+// Licensed under MIT License
 
 $word1 = array("Add", "your", "words", "here");
 $word2 = array("Add", "your", "words", "here");
