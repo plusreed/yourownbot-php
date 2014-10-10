@@ -1,7 +1,9 @@
 <?php
 // SendYourOwnTweet.php
-// Made by PlusReed because I love @yourownbot and I was bored. :D
-// Please, keep my name in this. I have no license to this, but, please, no theft. :-(
+// A basic PHP-powered @yourownbot clone.
+// By PlusReed, minor improvements by +Sean.
+// Licensed under MIT License
+
 $word1 = array("Add", "your", "words", "here");
 $word2 = array("Add", "your", "words", "here");
 $rand_word1 = $word1[array_rand($word1, 1)];
@@ -16,7 +18,7 @@ $apikey = "apikeyhere";
 $apikeysecret = "apikeysecrethere";
 
 // Create a new object
-$tweet = new TwitterOAuth($consumerkey, $consumersecret, $apikey, $apikeysecret); // Whoops! Had a mistake here. Fixed.
+$tweet = new TwitterOAuth($consumerkey, $consumersecret, $apikey, $apikeysecret);
 
 // Randomized tweet
 $tweetMessage = $rand_word1.' your own '.$rand_word2.'!';
