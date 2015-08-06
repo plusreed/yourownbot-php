@@ -1,6 +1,6 @@
 yourownbot-online
 =================
-A basic PHP powered [@yourownbot](https://twitter.com/#!/yourownbot) clone.
+**This project is no longer maintained.** A basic PHP powered [@yourownbot](https://twitter.com/#!/yourownbot) clone.
 
 How to use
 =================
