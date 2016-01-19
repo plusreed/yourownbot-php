@@ -1,4 +1,4 @@
-yourownbot-online
+yourownbot-php
 =================
 **This project is no longer maintained. I can't guarantee that this will work on future versions of PHP.** A basic PHP powered [@yourownbot](https://twitter.com/#!/yourownbot) clone.
 
