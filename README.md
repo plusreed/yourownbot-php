@@ -1,3 +1,4 @@
+**I do not write Twitter bots anymore. Please don't ask for support with this bot, I won't help you. Any future issues and PRs will not be accepted.**
 yourownbot-php
 =================
 **This project is no longer maintained. I can't guarantee that this will work on future versions of PHP.** A basic PHP powered [@yourownbot](https://twitter.com/#!/yourownbot) clone.
