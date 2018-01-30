@@ -4,7 +4,7 @@ if (!PHP_SAPI == 'cli') { die(); } // Only allow the CLI to run this script.
 // tweeter.php
 // https://github.com/plusreed/yourownbot-php
 
-// TODO: Separate into config.ini.
+// TODO: Separate into .env
 $word1 = array("Add", "your", "words", "here");
 $word2 = array("Add", "your", "words", "here");
 $rand_word1 = $word1[array_rand($word1, 1)];
@@ -12,7 +12,7 @@ $rand_word2 = $word2[array_rand($word2, 1)];
 
 require_once('twitteroauth.php');
 
-// Keys here
+// TODO: Separate into .env
 $consumerkey = "consumerkeyhere";
 $consumersecret = "consumersecrethere";
 $apikey = "apikeyhere";
