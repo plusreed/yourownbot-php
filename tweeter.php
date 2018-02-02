@@ -4,7 +4,6 @@ if (!PHP_SAPI == 'cli') { die(); } // Only allow the CLI to run this script.
 // tweeter.php
 // https://github.com/plusreed/yourownbot-php
 
-// TODO: Separate into .env
 $word1 = array("Add", "your", "words", "here");
 $word2 = array("Add", "your", "words", "here");
 $rand_word1 = $word1[array_rand($word1, 1)];
