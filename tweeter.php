@@ -26,6 +26,11 @@ $dotenv->required(
     ]
 );
 
+/**
+ * The list of words we use.
+ * 
+ * @todo Read these from a file instead.
+ */
 $first = array(
     "Add", "your", "words", "here"
 );
