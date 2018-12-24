@@ -1,31 +1,47 @@
 <?php
-if (!PHP_SAPI == 'cli') { die(); } // Only allow the CLI to run this script.
+require "vendor/autoload.php";
 
-// tweeter.php
-// https://github.com/plusreed/yourownbot-php
+use Abraham\TwitterOAuth\TwitterOAuth;
 
-$word1 = array("Add", "your", "words", "here");
-$word2 = array("Add", "your", "words", "here");
-$rand_word1 = $word1[array_rand($word1, 1)];
-$rand_word2 = $word2[array_rand($word2, 1)];
+if (!PHP_SAPI == 'cli') { die("Please run this via a cron job or from the CLI."); } // Only allow the CLI to run this script.
 
-require_once('twitteroauth.php');
+$dotenv = new Dotenv\Dotenv(__DIR__);
 
-// TODO: Separate into .env
-$consumerkey = "consumerkeyhere";
-$consumersecret = "consumersecrethere";
-$apikey = "apikeyhere";
-$apisecret = "apisecrethere";
+// These are required for the app to function, so we should enforce that they exist in `.env`.
+$dotenv->required(['TW_CONSUMER_KEY', 'TW_CONSUMER_SECRET', 'TW_API_KEY', 'TW_API_SECRET']);
+
+$first = array(
+	"Add", "your", "words", "here"
+);
+$second = array(
+	"Add", "your", "words", "here"
+);
+
+/**
+ * Creates a random "your-own" tweet.
+ */
+function makeTweet() {
+	$dontChance = rand(0, 1); // Chance that the tweet will be prepended with "Don't".
+	$r1 = $first[array_rand($first, 1)];
+	$r2 = $second[array_rand($second, 1)];
+
+	return ($dontChance = 1 ? "Don't" : "") . "$r1 your own $r2!";
+}
+
+// Get API keys and such.
+$consumerkey = $_ENV['TW_CONSUMER_KEY'];
+$consumersecret = $_ENV['TW_CONSUMER_SECRET'];
+$apikey = $_ENV['TW_API_KEY'];
+$apisecret = $_ENV['TW_API_SECRET'];
 
 // Create a new object
-$tweet = new TwitterOAuth($consumerkey, $consumersecret, $apikey, $apikeysecret);
+$twitter = new TwitterOAuth($consumerkey, $consumersecret, $apikey, $apikeysecret);
 
-// Randomize tweet
-$tweetMessage = '$rand_word1 your own $rand_word2!';
+// The random tweet we're posting.
+$status = makeTweet();
 
 // Make sure generated tweet is under 280 characters
-if(strlen($tweetMessage) <= 280) {
+if(strlen($status) <= 280) {
 	// Post the tweet
-	$tweet->post('statuses/update', array('status' => $tweetMessage));
+	$twitter->post('statuses/update', ['status' => $status]);
 }
-?>
